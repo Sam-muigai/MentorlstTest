@@ -9,5 +9,9 @@ sealed class SignInScreenEvents {
 
     data object OnSignUpClicked : SignInScreenEvents()
 
+    data object OnForgotPasswordClicked : SignInScreenEvents()
+
     data object OnLoginClicked : SignInScreenEvents()
+
+    data object OnPasswordEyeToggled : SignInScreenEvents()
 }

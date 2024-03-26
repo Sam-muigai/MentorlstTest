@@ -32,4 +32,12 @@ class SignInViewModel : ViewModel() {
             )
         }
     }
+
+    fun onPasswordEyeToggled() {
+        _signInScreenState.update {
+            it.copy(
+                passwordVisible = !signInScreenState.value.passwordVisible,
+            )
+        }
+    }
 }
