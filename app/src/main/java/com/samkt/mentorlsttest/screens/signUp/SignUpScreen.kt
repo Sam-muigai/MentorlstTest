@@ -20,15 +20,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.samkt.mentorlsttest.R
 import com.samkt.mentorlsttest.screens.components.MentorlistCheckBox
 import com.samkt.mentorlsttest.screens.components.MentorlstAltButton
 import com.samkt.mentorlsttest.screens.components.MentorlstButton
 import com.samkt.mentorlsttest.screens.components.MentorlstPasswordTextField
 import com.samkt.mentorlsttest.screens.components.MentorlstTextField
+import com.samkt.mentorlsttest.screens.navigation.AppScreens
 
 @Composable
-fun SignUpScreen(signUpViewModel: SignUpViewModel = viewModel()) {
+fun SignUpScreen(signUpViewModel: SignUpViewModel = viewModel(),
+                 navController: NavHostController) {
     val signUpScreenState = signUpViewModel.signUpScreenState.collectAsState().value
 
     SignUpScreenContent(
@@ -44,7 +48,7 @@ fun SignUpScreen(signUpViewModel: SignUpViewModel = viewModel()) {
                 }
 
                 is SignUpScreenEvents.OnSignUpButtonClicked -> {
-                    // TODO: Navigate to SignIn
+                    navController.navigate(AppScreens.SignInScreen.route)
                 }
 
                 is SignUpScreenEvents.OnTermsToggled -> {

@@ -28,10 +28,11 @@ val Typography =
             ),
         bodyLarge =
             TextStyle(
-                fontFamily = poppins,
                 fontWeight = FontWeight.Normal,
-                fontSize = 18.sp,
-                lineHeight = 16.sp,
+                fontSize = 14.sp,
+                lineHeight = 22.sp,
+                letterSpacing = 0.28.sp,
+                fontFamily = poppins,
             ),
         titleLarge =
             TextStyle(
