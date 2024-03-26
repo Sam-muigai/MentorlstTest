@@ -9,10 +9,10 @@ class SignInViewModel : ViewModel() {
     private val _signInScreenState = MutableStateFlow(SignInScreenState())
     val signInScreenState = _signInScreenState.asStateFlow()
 
-    fun onEmailChange(value: String) {
+    fun onUsernameChange(value: String) {
         _signInScreenState.update {
             it.copy(
-                email = value,
+                username = value,
             )
         }
     }

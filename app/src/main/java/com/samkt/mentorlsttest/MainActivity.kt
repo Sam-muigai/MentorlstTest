@@ -3,7 +3,7 @@ package com.samkt.mentorlsttest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.samkt.mentorlsttest.screens.signIn.SignInScreen
+import com.samkt.mentorlsttest.screens.signUp.SignUpScreen
 import com.samkt.mentorlsttest.ui.theme.MentorlstTestTheme
 
 class MainActivity : ComponentActivity() {
@@ -11,7 +11,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MentorlstTestTheme {
-                SignInScreen()
+                SignUpScreen()
             }
         }
     }

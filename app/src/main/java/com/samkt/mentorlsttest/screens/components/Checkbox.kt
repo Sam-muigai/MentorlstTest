@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.samkt.mentorlsttest.R
 
 @Composable
-fun MentorlistRadioButton(
+fun MentorlistCheckBox(
     modifier: Modifier = Modifier,
     description: String = "",
     checked: Boolean = false,

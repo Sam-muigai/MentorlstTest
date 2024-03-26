@@ -1,7 +1,7 @@
 package com.samkt.mentorlsttest.screens.signIn
 
 sealed class SignInScreenEvents {
-    data class OnEmailChange(val email: String) : SignInScreenEvents()
+    data class OnUsernameChange(val username: String) : SignInScreenEvents()
 
     data class OnPasswordChange(val password: String) : SignInScreenEvents()
 

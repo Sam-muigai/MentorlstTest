@@ -20,14 +20,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.samkt.mentorlsttest.R
-import com.samkt.mentorlsttest.screens.components.MentorlistRadioButton
+import com.samkt.mentorlsttest.screens.components.MentorlistCheckBox
 import com.samkt.mentorlsttest.screens.components.MentorlstAltButton
 import com.samkt.mentorlsttest.screens.components.MentorlstButton
 import com.samkt.mentorlsttest.screens.components.MentorlstPasswordTextField
 import com.samkt.mentorlsttest.screens.components.MentorlstTextField
+import com.samkt.mentorlsttest.ui.theme.MentorlstTestTheme
 
 @Composable
 fun SignInScreen(signInViewModel: SignInViewModel = viewModel()) {
@@ -37,8 +39,8 @@ fun SignInScreen(signInViewModel: SignInViewModel = viewModel()) {
         signInScreenState = signInScreenState,
         onEvent = { event ->
             when (event) {
-                is SignInScreenEvents.OnEmailChange -> {
-                    signInViewModel.onEmailChange(event.email)
+                is SignInScreenEvents.OnUsernameChange -> {
+                    signInViewModel.onUsernameChange(event.username)
                 }
 
                 is SignInScreenEvents.OnPasswordChange -> {
@@ -97,9 +99,9 @@ fun SignInScreenContent(
                     ),
             )
             MentorlstTextField(
-                value = signInScreenState.email,
+                value = signInScreenState.username,
                 onValueChange = {
-                    onEvent(SignInScreenEvents.OnEmailChange(it))
+                    onEvent(SignInScreenEvents.OnUsernameChange(it))
                 },
                 placeHolder = stringResource(id = R.string.username_placeholder),
             )
@@ -128,7 +130,7 @@ fun SignInScreenContent(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                MentorlistRadioButton(
+                MentorlistCheckBox(
                     checked = signInScreenState.rememberMeToggled,
                     onCheckChange = {
                         onEvent(SignInScreenEvents.OnRememberMeToggled)
@@ -171,5 +173,16 @@ fun SignInScreenContent(
                 )
             }
         }
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun SignInScreenPreview() {
+    MentorlstTestTheme {
+        SignInScreenContent(
+            signInScreenState = SignInScreenState(),
+            onEvent = {},
+        )
     }
 }

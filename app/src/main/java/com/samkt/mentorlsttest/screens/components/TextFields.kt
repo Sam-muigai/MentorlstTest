@@ -39,7 +39,10 @@ fun MentorlstTextField(
         placeholder = {
             Text(
                 text = placeHolder,
-                style = MaterialTheme.typography.bodyLarge,
+                style =
+                    MaterialTheme.typography.bodyLarge.copy(
+                        MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f),
+                    ),
             )
         },
         colors = colors,
@@ -69,7 +72,10 @@ fun MentorlstPasswordTextField(
         placeholder = {
             Text(
                 text = placeHolder,
-                style = MaterialTheme.typography.bodyLarge,
+                style =
+                    MaterialTheme.typography.bodyLarge.copy(
+                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f),
+                    ),
             )
         },
         colors = colors,
