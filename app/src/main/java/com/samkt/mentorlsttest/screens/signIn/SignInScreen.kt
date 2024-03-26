@@ -83,7 +83,7 @@ fun SignInScreenContent(
                     .padding(paddingValues)
                     .fillMaxWidth()
                     .verticalScroll(rememberScrollState())
-                    .padding(8.dp),
+                    .padding(12.dp),
         ) {
             Spacer(modifier = Modifier.height(16.dp))
             Text(

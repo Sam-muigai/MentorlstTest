@@ -73,7 +73,7 @@ fun SignUpScreenContent(
         modifier =
         modifier
             .fillMaxSize()
-            .padding(8.dp),
+            .padding(12.dp),
     ) { paddingValues ->
         Column(
             modifier =
